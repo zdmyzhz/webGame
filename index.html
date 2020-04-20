@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>老年痴呆测试器</title>
+	<link rel="stylesheet" type="text/css" href="css/card.css"/>
+	<link rel="stylesheet" type="text/css" href="css/notice.css"/>
+	<link rel="stylesheet" type="text/css" href="css/control.css"/>
+	<script src="js/vue.js"></script>
+	<script type="text/javascript" src="js/defer.js"></script>
+	<script type="text/javascript" src="js/card.js" defer></script>
+	</head>
+	<body>
+		<div class="scene" id="scene" :style="img">
+			<div class="notice gamego" v-if="go">
+				<div class="missionNum">第{{mission}}关</div>
+				<button class="btn" @click="begin">开始</button>
+			</div>
+			<div class="cardBox" :style="boxSize" v-if="!go&&!over">
+				<card v-for="node in nodes" :title="node.title" :size="size" @card-turn="compare($event)" :promise="node.defer" :img="node.path" :key="node.id" :bk="node.bk"></card>
+			</div>
+			<div class="notice gameover" v-if="over">
+				<div class="missionNum">第{{mission}}关</div>
+				<div class="conclusion">{{conclusion}}</div>
+				<div class="spend">{{spend}}</div>
+				<div class="handle">
+					<span class="LM" v-if="mission>1" @click="mission--">上一关</span>
+					<span class="RM" @click="mission=mission">重开</span>
+					<span class="NM" v-if="mission<missionSize.length" @click="mission++">下一关</span>
+				</div>
+			</div>
+			<div class="controlBox" id="control" :class="{visible:control}">
+				<div class="control">
+					<label for="missionNum">关卡:</label>
+					<select v-model="mission" id="missionNum">
+						<option v-for="i in missionSize.length" :value="i">
+							{{i}}
+						</option>
+					</select>
+				</div>
+				<div class="control">
+					<label for="theme">主题:</label>
+					<select v-model="theme" id="theme">
+						<option v-for="i in themeList" :value="i.fileName">
+							{{i.name}}
+						</option>
+					</select>
+				</div>
+				<div class="control">
+					<input type="radio" id="small" value="small" v-model="type">
+					<label for="small">困难</label>
+					<input type="radio" id="middle" value="middle" v-model="type">
+					<label for="middle">正常</label>
+					<input type="radio" id="big" value="big" v-model="type">
+					<label for="big">简单</label>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

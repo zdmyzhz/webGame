@@ -1,0 +1,95 @@
+.notice{
+	width:350px;
+	height: 250px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap:wrap;
+}
+.gamego{
+	background: rgba(255,255,255,0.7);
+	color: rgba(0,0,0,0.7);
+	border:5px solid rgb(248,235,216);
+}
+.gameover{
+	background: rgba(0,0,0,0.7);
+	color: rgba(255,255,255,0.7);
+}
+.missionNum{
+	text-align: center;
+	align-self: flex-start;
+	width: 100%;
+	font-size: 2.5em;
+}
+.btn{
+	text-align: center;
+	background: rgb(34,139,34);
+	color: white;
+	border: 1px solid transparent;
+	border-radius: 2em;
+	width: 4em;
+	height: 4em;
+	transition: 1s;
+	cursor: pointer;
+}
+.btn:hover{
+	background: rgb(100,149,237);
+	width: 8em;
+}
+.spend{
+	text-align: center;
+	width: 100%;
+	font-size: 1.5em;
+	position: relative;
+}
+.spend:after,.spend:before{
+	content: " ";
+	position: absolute;
+	background:linear-gradient(90deg,#e66465, #9198e5);
+	width: 0;
+	height: 3px;
+	transition: 1s;
+}
+.spend:before{
+	top:0;
+	left: 0;
+}
+.spend:after{
+	bottom: 0;
+	right: 0;
+}
+.spend:hover:after,.spend:hover:before{
+	width: 100%;
+}
+.handle{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+.handle>span{
+	cursor: pointer;
+	transition: 0.8s;
+	text-align: center;
+	font-weight: 600;
+}
+.handle>span:hover{
+	font-size: 1em;
+	color: rgb(205,92,92);
+	/*transform: rotateY(-45deg);*/
+	font-weight: 700;
+}
+.conclusion{
+	border: 5px solid rgb(237,81,38);
+	padding: 4px;
+	color:rgb(237,81,38);
+	font-size:1.2em;
+	font-weight: 800;
+	display: inline-block;
+	transition-timing-function: ease-in;
+	transform:rotate(-10deg) scale(50,50);
+	transition: 0.5s;
+}
+.conclusionEnd{
+	transform:rotate(-10deg) scale(1,1);
+}

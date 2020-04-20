@@ -1,0 +1,17 @@
+.controlBox{
+	width:210px;
+	height:110px;
+	border-radius: 10px;
+	background:rgb(214,220,193);
+	position: absolute;
+	top:-110px;
+	right: 0;
+	transition: 1s;
+}
+.control{
+	margin: 10px;
+	font-weight: 600;
+}
+.visible{
+	top: 0;
+}

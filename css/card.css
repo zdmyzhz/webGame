@@ -1,0 +1,63 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.scene{
+	width: 1000px;
+	height: 600px;
+	border-radius: 20px;
+	border: 2px solid black;
+	box-shadow: 10px 10px 30px black;
+	/*background-image: url(../image/part1.jpg);*/
+	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cardBox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background: orange;*/
+	flex-wrap:wrap;
+	align-content:center;
+}
+.cardFrame{
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 2px solid black;
+	position: relative;
+	transform: rotateY(0deg);
+	transition: 0.5s;
+	transform-style:preserve-3d;/**子元素是否保留其3D位置**/
+	
+}
+.card{
+	width: 100%;
+	height:100%;
+}
+.back{
+	background-size: 100% 100%;
+	/*background: silver;*/
+	/*background-clip: content-box;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	backface-visibility:hidden;
+	transform: rotateY(0deg);
+	border-radius: 5px;
+}
+.image{
+	/*background: black;*/
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	backface-visibility:hidden;
+	transform: rotateY(180deg);
+	border-radius: 5px;
+}
+.show{
+	transform: rotateY(-180deg);
+}
